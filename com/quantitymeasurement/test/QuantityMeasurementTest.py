@@ -74,25 +74,25 @@ def test_givenOneInchAndTwoInch_WhenCompared_ShouldReturnFalse():
 def test_givenOneFtAndTwelveInch_WhenCompared_ShouldReturnTrue():
     feet = QuantityMeasurer(Lengths.FEET, 1.0)
     inch = QuantityMeasurer(Lengths.INCH, 12.0)
-    assert feet.compare(inch) == True
+    assert feet.compare(inch)
 
 
 def test_givenTwelveInchAndOneFeet_WhenCompared_ShouldReturnTrue():
     feet = QuantityMeasurer(Lengths.FEET, 1.0)
     inch = QuantityMeasurer(Lengths.INCH, 12.0)
-    assert inch.compare(feet) == True
+    assert inch.compare(feet)
 
 
 def test_giveOneYardAndOneYard_WhenCompared_ShouldReturnTrue():
     first_yard = QuantityMeasurer(Lengths.YARD, 1.0)
     second_yard = QuantityMeasurer(Lengths.YARD, 1.0)
-    assert first_yard.compare(second_yard) == True
+    assert first_yard.compare(second_yard)
 
 
 def test_givenThreeFtAndOneYard_WhenCompared_ShouldReturnTrue():
     feet = QuantityMeasurer(Lengths.FEET, 3.0)
     yard = QuantityMeasurer(Lengths.YARD, 1.0)
-    assert feet.compare(yard) == True
+    assert feet.compare(yard)
 
 
 def test_givenOneFtAndOneYard_WhenCompared_ShouldReturnFalse():
@@ -104,16 +104,40 @@ def test_givenOneFtAndOneYard_WhenCompared_ShouldReturnFalse():
 def test_givenOneInchAndOneYard_WhenCompared_ShouldReturnFalse():
     inch = QuantityMeasurer(Lengths.INCH, 1.0)
     yard = QuantityMeasurer(Lengths.YARD, 1.0)
-    assert inch.compare(yard) == False
+    assert not inch.compare(yard)
 
 
 def test_givenOneYardAndThirtySixInch_WhenCompared_ShouldReturnTrue():
     inch = QuantityMeasurer(Lengths.INCH, 36.0)
     yard = QuantityMeasurer(Lengths.YARD, 1.0)
-    assert inch.compare(yard) == True
+    assert inch.compare(yard)
 
 
 def test_givenOneCmAndOneCm_WhenCompared_ShouldReturnTrue():
     first_cm = QuantityMeasurer(Lengths.CM, 1.0)
     second_cm = QuantityMeasurer(Lengths.CM, 1.0)
     assert first_cm.compare(second_cm)
+
+
+def test_givenTwoInchAndFiveCm_WhenCompared_ShouldReturnTrue():
+    inch = QuantityMeasurer(Lengths.INCH, 2.0)
+    cm = QuantityMeasurer(Lengths.CM, 5.0)
+    assert inch.compare(cm)
+
+
+def test_givenOneInchAndOneCm_WhenCompared_ShouldReturnFalse():
+    inch = QuantityMeasurer(Lengths.INCH, 1.0)
+    cm = QuantityMeasurer(Lengths.CM, 1.0)
+    assert not inch.compare(cm)
+
+
+def test_givenOneFeetAndThirtyCm_WhenCompared_ShouldReturnTrue():
+    feet = QuantityMeasurer(Lengths.FEET, 1.0)
+    cm = QuantityMeasurer(Lengths.CM, 30.0)
+    assert feet.compare(cm)
+
+
+def test_givenOneYardAndNinetyCm_WhenCompared_ShouldReturnTrue():
+    yard = QuantityMeasurer(Lengths.YARD, 1.0)
+    cm = QuantityMeasurer(Lengths.CM, 90.0)
+    assert yard.compare(cm)
