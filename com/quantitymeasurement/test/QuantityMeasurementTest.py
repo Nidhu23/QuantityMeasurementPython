@@ -141,3 +141,9 @@ def test_givenOneYardAndNinetyCm_WhenCompared_ShouldReturnTrue():
     yard = QuantityMeasurer(Lengths.YARD, 1.0)
     cm = QuantityMeasurer(Lengths.CM, 90.0)
     assert yard.compare(cm)
+
+
+def test_givenOneInchAndOneInch_WhenAdded_ShouldReturnSumInInches():
+    first_inch = QuantityMeasurer(Lengths.INCH, 1.0)
+    second_inch = QuantityMeasurer(Lengths.INCH, 1.0)
+    assert first_inch.add(second_inch) == 2.0
