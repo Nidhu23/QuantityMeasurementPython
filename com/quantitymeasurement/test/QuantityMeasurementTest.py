@@ -86,4 +86,10 @@ def test_givenTwelveInchAndOneFeet_WhenCompared_ShouldReturnTrue():
 def test_giveOneYardAndOneYard_WhenCompared_ShouldReturnTrue():
     first_yard = QuantityMeasurer(Lengths.YARD, 1.0)
     second_yard = QuantityMeasurer(Lengths.YARD, 1.0)
-    assert first_yard.compare(second_yard)
+    assert first_yard.compare(second_yard) == True
+
+
+def test_givenThreeFtAndOneYard_WhenCompared_ShouldReturnTrue():
+    feet = QuantityMeasurer(Lengths.FEET, 3.0)
+    yard = QuantityMeasurer(Lengths.YARD, 1.0)
+    assert feet.compare(yard) == True
