@@ -3,4 +3,6 @@ class Feet:
         self.feet = feet
 
     def __eq__(self, other):
-        return self.feet == other
+        if isinstance(other, Feet):
+            return self.feet == other.feet
+        return False
