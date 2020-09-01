@@ -93,3 +93,21 @@ def test_givenThreeFtAndOneYard_WhenCompared_ShouldReturnTrue():
     feet = QuantityMeasurer(Lengths.FEET, 3.0)
     yard = QuantityMeasurer(Lengths.YARD, 1.0)
     assert feet.compare(yard) == True
+
+
+def test_givenOneFtAndOneYard_WhenCompared_ShouldReturnFalse():
+    feet = QuantityMeasurer(Lengths.FEET, 1.0)
+    yard = QuantityMeasurer(Lengths.YARD, 1.0)
+    assert feet.compare(yard) == False
+
+
+def test_givenOneInchAndOneYard_WhenCompared_ShouldReturnFalse():
+    inch = QuantityMeasurer(Lengths.INCH, 1.0)
+    yard = QuantityMeasurer(Lengths.YARD, 1.0)
+    assert inch.compare(yard) == False
+
+
+def test_givenOneYardAndThirtySixInch_WhenCompared_ShouldReturnTrue():
+    inch = QuantityMeasurer(Lengths.INCH, 36.0)
+    yard = QuantityMeasurer(Lengths.YARD, 1.0)
+    assert inch.compare(yard) == True
