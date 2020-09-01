@@ -1,2 +1,5 @@
 /.idea/*
 QuantityMeasurementPython.iml
+com/__init__.py
+com/quantitymeasurement/__init__.py
+com/quantitymeasurement/test/__init__.py
