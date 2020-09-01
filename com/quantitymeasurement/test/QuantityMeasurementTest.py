@@ -12,7 +12,13 @@ def test_givenZeroFtAndNull_WhenCompared_ShouldReturnFalse():
     assert feet != None
 
 
-def test_TwoFeetInstanceVariable_WhenCompared_ShouldReturnTrue():
+def test_givenTwoFeetInstanceVariable_WhenCompared_ShouldReturnTrue():
     first_feet = Feet(0.0)
     second_feet = first_feet
     assert first_feet == second_feet
+
+
+def test_givenZeroFeetAndFloatValue_WhenCompared_ShouldReturnFalse():
+    first_feet = Feet(0.0)
+    second_feet = float(0.0)
+    assert first_feet != second_feet
