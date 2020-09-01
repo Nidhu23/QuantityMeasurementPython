@@ -165,3 +165,21 @@ def test_givenTwoInchAndTwoPointFiveCm_WhenAdded_ShouldReturnSumInInches():
     inch = QuantityMeasurer(Lengths.INCH, 2.0)
     cm = QuantityMeasurer(Lengths.CM, 2.5)
     assert inch.add(cm) == 3.0
+
+
+def test_givenOneLitreAndOneLitre_WhenCompared_ShouldReturnTrue():
+    first_litre = QuantityMeasurer(Volumes.LITRE, 1.0)
+    second_litre = QuantityMeasurer(Volumes.LITRE, 1.0)
+    assert first_litre == second_litre
+
+
+def test_givenOneGallonAndThreePointSeven_WhenCompared_ShouldReturnTrue():
+    gallon = QuantityMeasurer(Volumes.GALLON, 1.0)
+    litre = QuantityMeasurer(Volumes.LITRE, 3.78)
+    assert gallon.compare(litre)
+
+
+def test_givenOneLitreAndThousandMl_WhenCompared_ShouldReturnTrue():
+    litre = QuantityMeasurer(Volumes.LITRE, 1.0)
+    ml = QuantityMeasurer(Volumes.ML, 1000.0)
+    assert litre.compare(ml)
