@@ -19,8 +19,9 @@ class QuantityMeasurer:
 
 
 class Lengths(enum.Enum):
-    Feet = 12.0
-    Inch = 1.0
+    FEET = 12.0
+    INCH = 1.0
+    YARD = 36.0
 
     def __init__(self, unit):
         self.unit = unit
