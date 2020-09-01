@@ -147,3 +147,21 @@ def test_givenOneInchAndOneInch_WhenAdded_ShouldReturnSumInInches():
     first_inch = QuantityMeasurer(Lengths.INCH, 1.0)
     second_inch = QuantityMeasurer(Lengths.INCH, 1.0)
     assert first_inch.add(second_inch) == 2.0
+
+
+def test_givenOneftAndTwoInch_WhenAdded_ShouldReturnSumInInches():
+    inch = QuantityMeasurer(Lengths.INCH, 2.0)
+    feet = QuantityMeasurer(Lengths.FEET, 1.0)
+    assert inch.add(feet) == 14.0
+
+
+def test_givenOneFtAndOneFt_WhenAdded_ShouldReturnSumInInches():
+    first_feet = QuantityMeasurer(Lengths.FEET, 1.0)
+    second_feet = QuantityMeasurer(Lengths.FEET, 1.0)
+    assert first_feet.add(second_feet) == 24.0
+
+
+def test_givenTwoInchAndTwoPointFiveCm_WhenAdded_ShouldReturnSumInInches():
+    inch = QuantityMeasurer(Lengths.INCH, 2.0)
+    cm = QuantityMeasurer(Lengths.CM, 2.5)
+    assert inch.add(cm) == 3.0
