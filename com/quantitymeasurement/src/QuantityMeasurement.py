@@ -1,8 +1,29 @@
+import enum
+
+
 class QuantityMeasurer:
-    def __init__(self, value):
-        self.value = value
+    def __init__(self, unit, value):
+        self.__value = value
+        self.__unit = unit
 
     def __eq__(self, other):
         if isinstance(other, QuantityMeasurer):
-            return self.value == other.value
+            return self.__value == other.__value
         return False
+
+    def compare(self, other):
+        if isinstance(self.__unit, Lengths) and isinstance(other.__unit, Lengths):
+            if Lengths.convert(self.__unit, self.__value) == Lengths.convert(other.__unit, other.__value):
+                return True
+        return False
+
+
+class Lengths(enum.Enum):
+    Feet = 12.0
+    Inch = 1.0
+
+    def __init__(self, unit):
+        self.unit = unit
+
+    def convert(self, value):
+        return self.unit * value
