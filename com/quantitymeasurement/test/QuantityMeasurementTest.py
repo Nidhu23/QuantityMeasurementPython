@@ -195,3 +195,21 @@ def test_givenOneLitreAndThousandMl_WhenAdded_ShouldReturnSumInLitres():
     litre = QuantityMeasurer(Volumes.LITRE, 1.0)
     ml = QuantityMeasurer(Volumes.ML, 1000.0)
     assert litre.add(ml) == 2.0
+
+
+def test_givenOneKgAndOneKg_WhenCompared_ShouldRreturnTrue():
+    first_kg = QuantityMeasurer(Weights.KG, 1.0)
+    second_kg = QuantityMeasurer(Weights.KG, 1.0)
+    assert first_kg.compare(second_kg)
+
+
+def test_givenOneKgAndThousandGrams_WhenCompared_ShouldRreturnTrue():
+    kg = QuantityMeasurer(Weights.KG, 1.0)
+    grams = QuantityMeasurer(Weights.GRAMS, 1000.0)
+    assert kg.compare(grams)
+
+
+def test_givenOneTonneAndThousandKg_WhenCompared_ShouldRreturnTrue():
+    tonne = QuantityMeasurer(Weights.TONNE, 1.0)
+    kg = QuantityMeasurer(Weights.KG, 1000.0)
+    assert kg.compare(tonne)
