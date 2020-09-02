@@ -213,3 +213,9 @@ def test_givenOneTonneAndThousandKg_WhenCompared_ShouldRreturnTrue():
     tonne = QuantityMeasurer(Weights.TONNE, 1.0)
     kg = QuantityMeasurer(Weights.KG, 1000.0)
     assert kg.compare(tonne)
+
+
+def test_given_oneTonneAndThousandGram_WhenAdded_ShouldReturnSumInKgs():
+    tonne = QuantityMeasurer(Weights.TONNE, 1.0)
+    kg = QuantityMeasurer(Weights.GRAMS, 1000.0)
+    assert kg.add(tonne) == 1001.0
