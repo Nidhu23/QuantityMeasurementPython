@@ -183,3 +183,15 @@ def test_givenOneLitreAndThousandMl_WhenCompared_ShouldReturnTrue():
     litre = QuantityMeasurer(Volumes.LITRE, 1.0)
     ml = QuantityMeasurer(Volumes.ML, 1000.0)
     assert litre.compare(ml)
+
+
+def test_givenOneGallaonAndThreePointSevenLitre_WhenAdded_ShouldReturnSumInLitres():
+    litre = QuantityMeasurer(Volumes.LITRE, 3.78)
+    gallon = QuantityMeasurer(Volumes.GALLON, 1.0)
+    assert litre.add(gallon) == 7.56
+
+
+def test_givenOneLitreAndThousandMl_WhenAdded_ShouldReturnSumInLitres():
+    litre = QuantityMeasurer(Volumes.LITRE, 1.0)
+    ml = QuantityMeasurer(Volumes.ML, 1000.0)
+    assert litre.add(ml) == 2.0
