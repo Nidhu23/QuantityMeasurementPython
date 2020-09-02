@@ -48,3 +48,15 @@ class Volumes(enum.Enum):
 
     def convert(self, value):
         return self.unit * value
+
+
+class Weights(enum.Enum):
+    KG = 1.0
+    GRAMS = 0.001
+    TONNE = 1000
+
+    def __init__(self, unit):
+        self.unit = unit
+
+    def convert(self, value):
+        return self.unit * value
